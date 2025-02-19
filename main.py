@@ -85,3 +85,26 @@ if __name__ == "__main__":
         port=8000, 
         reload=True
     )
+
+
+# Web App to refactor documentation
+# scrape software documentation
+# pick out articles, classes, methods, and functions
+# construct RAG for docs
+
+# documentation article:
+# - title
+# - description
+#
+# - parameters
+# - each parameter should have a description
+#
+# - returns
+# - return value should have a description
+#
+# - raises
+# - each exception should have a description for in what situations they may be encountered
+#
+# - example usage
+# - see also
+
