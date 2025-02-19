@@ -92,19 +92,33 @@ if __name__ == "__main__":
 # pick out articles, classes, methods, and functions
 # construct RAG for docs
 
-# documentation article:
-# - title
-# - description
+# Class article:
+# title
+# description
 #
-# - parameters
-# - each parameter should have a description
+# attributes
+# attribute description
 #
-# - returns
-# - return value should have a description
+# methods
+# method description
+# method params
+# method returns
+# method exceptions
+# method usage example
 #
-# - raises
-# - each exception should have a description for in what situations they may be encountered
-#
-# - example usage
-# - see also
+# class usage examples
 
+# Function article:
+# title
+# description
+#
+# parameters
+# parameter description
+#
+# returns
+# return value description
+#
+# raises
+# exception description
+#
+# function usage examples
