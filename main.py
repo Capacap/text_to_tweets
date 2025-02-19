@@ -100,6 +100,7 @@ if __name__ == "__main__":
 # attribute description
 #
 # methods
+# method title
 # method description
 # method params
 # method returns
