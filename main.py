@@ -2,7 +2,7 @@ import os
 import uvicorn
 
 from mistralai import Mistral
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Body
 from pydantic import BaseModel, Field
 from tweets_from_text import tweets_from_text
 
@@ -39,6 +39,31 @@ async def process_text(request: ProcessRequest):
     except Exception as e:
         raise HTTPException(
             status_code=500, 
+            detail=f"Processing error: {str(e)}"
+        )
+
+@app.post("/process-plaintext/", response_model=TweetListResponse)
+async def process_plaintext(text: str = Body(..., media_type='text/plain', max_length=20000)):
+    try:
+        cleaned_text = text.strip()
+        if len(cleaned_text) < 10:
+            raise HTTPException(status_code=400, detail="Text too short")
+        if len(cleaned_text) > 20000:
+            raise HTTPException(status_code=400, detail="Text exceeds maximum length")
+
+        result = tweets_from_text(
+            cleaned_text, 
+            512,
+            64,
+            client, 
+            model
+        )
+        
+        return {"tweets": result}
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
             detail=f"Processing error: {str(e)}"
         )
 
