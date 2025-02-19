@@ -89,8 +89,13 @@ if __name__ == "__main__":
 
 # Web App to refactor documentation
 # scrape software documentation
-# pick out articles, classes, and functions
+# pick out tutorial articles, classes, and functions
 # construct RAG for docs
+
+# Tutorial article:
+# title
+# summary
+# steps
 
 # Class article:
 # title
