@@ -54,7 +54,7 @@ async def process_text(request: ProcessRequest):
         )
 
 @app.post("/process-plaintext/", response_model=TweetListResponse)
-async def process_plaintext(text: str = Body(..., media_type='text/plain', max_length=TEXT_MAX_LENGTH)):
+async def process_plaintext(text: str = Body(..., media_type='text/plain', max_length=TEXT_MAX_LENGTH, description="The text to be translated into tweets.")):
     try:
         cleaned_text = text.strip()
         if len(cleaned_text) < TEXT_MIN_LENGTH:
