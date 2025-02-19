@@ -17,8 +17,8 @@ DEFAULT_OVERLAP_SIZE = 64
 
 class ProcessRequest(BaseModel):
     text: str = Field(..., max_length=TEXT_MAX_LENGTH, description="The text to be translated into tweets.")
-    chunk_size: int = Field(default=DEFAULT_CHUNK_SIZE, gt=0, le=1024, description="Must be between 1-1024 characters.")
-    overlap_size: int = Field(default=DEFAULT_OVERLAP_SIZE, gt=0, le=1024, description="Must be between 1-1024 characters.")
+    chunk_size: int = Field(default=DEFAULT_CHUNK_SIZE, gt=0, le=1024, description="Must be between 1-1024 tokens. Default is 512.")
+    overlap_size: int = Field(default=DEFAULT_OVERLAP_SIZE, gt=0, le=1024, description="Must be between 1-1024 tokens. Default is 64.")
 
 class TweetListResponse(BaseModel):
     tweets: list[str]
