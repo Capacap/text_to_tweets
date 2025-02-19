@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field
 from tweets_from_text import tweets_from_text
 
 app = FastAPI(title="TEXT TO TWEETS API")
-model = os.environ["MISTRAL_MODEL"]
 client = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
+model = os.environ["MISTRAL_MODEL"]
 
 TEXT_MAX_LENGTH = 20000
 TEXT_MIN_LENGTH = 10
